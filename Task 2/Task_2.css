@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+/* General styles for the body */
+body {
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+    font-family: Arial, sans-serif; /* Sets the default font for the body */
+    background-color: #231651; /* Dark background color for the page */
+    margin: 0; /* Removes default margin from the body */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    display: grid; /* Uses CSS Grid layout */
+    grid-template-columns: 1fr; /* Single column layout by default */
+    justify-items: center; /* Centers content horizontally */
+    align-items: start; /* Aligns items to the top */
+    font-family: "Lato", sans-serif; /* Overrides with a specific font (Lato) */
+    font-size: 1.5em; /* Sets the font size to 1.5em */
+}
+
+/* Styles for the header text and buttons */
+h1, button{
+    font-family: "Teko", sans-serif; /* Sets a custom font for h1 and buttons */
+}
+
+button {
+    font-size: 2em; /* Increases font size for buttons */
+}
+
+.heading {
+    font-size: 3em; /* Increases font size for the main heading */
+    font-family: "Teko", sans-serif; /* Sets a custom font for h1 and buttons */
+    font-weight: 800;   /*  Setting font weight to 300 */
+    font-style: normal; /*  Setting font style to normal */
+    font-optical-sizing: auto;      /*  Setting font optical sizing to auto */
+    margin-left: 48px;
+}
+
+/* Header Styles */
+.header {
+    background-color: white; /* White background for the header */
+    display: flex; /* Flexbox layout for header */
+    flex-direction: row; /* Items arranged horizontally */
+    justify-content: space-between; /* Distributes items evenly across the header */
+    gap: 16px; /* Adds spacing between items */
+    align-items: center; /* Aligns items vertically to the center */
+    padding: 0 16px; /* Adds padding around the header */
+    width: 100%; /* Makes the header span the full width of the page */
+}
+
+.header h1 {
+    margin-left: 16px; /* Adds left margin to the h1 element */
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex; /* Flexbox layout for the navigation */
+    flex-direction: row; /* Arranges nav links horizontally */
+    justify-content: space-evenly; /* Evenly spaces navigation links */
+    gap: 48px; /* Adds space between the navigation links */
+    width: 100%; /* Makes the navigation span the full width */
+}
+
+.nav a {
+    color: black; /* Sets the color of the navigation links to black */
+    text-decoration: none;
+}
+
+/* Search button styles */
+.button {
+    border: 1px solid grey; /* Adds a border around the button */
+    font-size: 2em;
+    border-radius: 16px;
+    padding: 0 16px;
+}
+.button-search{
+    margin-right:48px;
+}
+
+/* Main Container for the Movie Cards */
+.main_container {
+    display: grid; /* Uses CSS Grid layout for the main container */
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns by default */
+    gap: 16px; /* Adds space between the grid items */
+    border: 2px solid white; /* Adds a white border around the container */
+    width: 100%; /* Makes the container span the full width */
+    max-width: 900px; /* Limits the width of the container on larger screens */
+    margin-top: 48px; /* Adds top margin to the container */
+    margin-bottom: 48px; /* Adds bottom margin to the container */
+}
+
+/* First movie card spans two columns */
+.first_movie {
+    grid-column: span 2; /* Makes the first movie card span across two columns */
+}
+
+/* Movies 4, 5, and 6 also span two columns */
+.fourth_movie, .fifth_movie, .sixth_movie {
+    grid-column: span 2; /* Spans two columns */
+    display: grid; /* Uses grid layout inside each movie card */
+    grid-template-columns: 1fr 1fr; /* Splits the content into two parts (image and text) */
+    gap: 16px; /* Adds space between image and text */
+}
+
+/* Ensure images in movies 4, 5, and 6 take up full height */
+.fourth_movie, .fifth_movie, .sixth_movie img{
+    height: 100%;
+}
+
+/* General movie card structure */
+.first_movie, .second_movie, .third_movie, .fourth_movie, .fifth_movie, .sixth_movie {
+    display: grid; /* Uses grid layout for movie cards */
+    grid-template-rows: auto 1fr; /* Stacks image and content vertically */
+    gap: 8px; /* Adds space between the image and content */
+    width: 100%; /* Makes each movie card take up full width */
+    border: 2px solid white; /* Adds a white border around each movie card */
+}
+
+/* Image styles for all movie images */
+.first_img img,
+.second_movie img,
+.third_movie img,
+.fourth_movie img,
+.fifth_movie img,
+.sixth_movie img {
+    width: 100%; /* Ensures the image takes up full width */
+    height: 385px; /* Sets a fixed height for all images */
+    object-fit: cover; /* Maintains aspect ratio and crops if necessary */
+}
+
+/* Movie content (text and button) */
+.first_movie_content,
+.second_movie_content,
+.third_movie_content,
+.fourth_movie_content,
+.fifth_movie_content,
+.sixth_movie_content {
+    display: flex; /* Uses flexbox for content */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: space-between; /* Distributes content evenly */
+    background-color: white; /* White background for content */
+    padding: 16px 16px 25px 16px; /* Adds padding inside the content box */
+    border: 2px solid white; /* Adds a border around content */
+}
+
+/* Specific style for the first movie content */
+.first_movie_content{
+    display: flex; /* Uses flexbox for the first movie */
+    flex-direction: row; /* Arranges content horizontally (image and text) */
+    justify-content: space-between; /* Distributes the image and text evenly */
+    gap: 16px; /* Adds space between image and text */
+}
+
+/* Ensures all movie description paragraphs take up full width */
+.first_movie_content p,
+.second_movie_content p,
+.third_movie_content p,
+.fourth_movie_content p,
+.fifth_movie_content p,
+.sixth_movie_content p {
+    width: 100%; /* Makes sure text takes up full width */
+}
+
+
+
+/*-------------------- Media Queries ------------------------*/
+
+/* Mobile (small) screens */
+@media (min-width: 360px) and (max-width: 720px) {
+
+    .nav {
+        display: none; /* Hides navigation bar on small screens */
+    }
+
+    body {
+        font-size: 1.5em; /* Reduces font size for smaller screens */
+    }
+
+    .main_container {
+        grid-template-columns: 1fr; /* Stacks movie cards vertically in 1 column */
+        grid-template-rows: repeat(6, auto); /* Ensures each movie card gets a separate row */
+        margin-top: 16px; /* Reduces top margin */
+        margin-bottom: 16px; /* Reduces bottom margin */
+    }
+
+    .first_movie,
+    .second_movie,
+    .third_movie,
+    .fourth_movie,
+    .fifth_movie,
+    .sixth_movie {
+        width: 100%; /* Ensures all movie cards span the full width */
+        height: auto; /* Adjusts height automatically */
+        grid-column: span 1; /* Makes each movie take one full row */
+    }
+
+    .fourth_movie,
+    .fifth_movie,
+    .sixth_movie {
+        grid-template-columns: none; /* Removes two-column layout for smaller screens */
+    }
+
+    .first_img img,
+    .second_movie img,
+    .third_movie img,
+    .fourth_movie img,
+    .fifth_movie img,
+    .sixth_movie img {
+        width: 100%; /* Makes sure images are responsive */
+    }
+
+    .first_movie_content {
+        display: flex; /* Changes the layout to a vertical stack for small screens */
+        flex-direction: column; /* Stacks the content vertically */
+        justify-content: space-between;
+    }
+}
+
+/* Tablet screens */
+@media (min-width: 721px) and (max-width: 1025px) {
+    .main_container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet screens */
+        grid-template-rows: auto auto auto; /* Ensures 3 rows for the 6 movie cards */
+        margin-top: 36px; /* Adds a bit more space on top */
+        margin-bottom: 36px; /* Adds more space on the bottom */
+    }
+
+    /* Apply vertical layout for all movie cards */
+    .first_movie,
+    .second_movie,
+    .third_movie,
+    .fourth_movie,
+    .fifth_movie,
+    .sixth_movie {
+        grid-column: span 1; /* Each movie card takes up one column */
+        display: grid; /* Uses grid layout for the content */
+        grid-template-rows: auto 1fr; /* Stacks image, text, and button vertically */
+        width: 100%; /* Makes sure all movie cards take full width */
+    }
+    .fourth_movie,
+    .fifth_movie,
+    .sixth_movie {
+        grid-template-columns: none; /* Removes two-column layout */
+    }
+
+    .first_img img,
+    .second_movie img,
+    .third_movie img,
+    .fourth_movie img,
+    .fifth_movie img,
+    .sixth_movie img {
+        width: 100%; /* Ensures images take up full width */
+        height: 250px; /* Fixes the height of images on tablet screens */
+        object-fit: cover; /* Maintains aspect ratio and crops if necessary */
+    }
+
+    .first_movie_content,
+    .second_movie_content,
+    .third_movie_content,
+    .fourth_movie_content,
+    .fifth_movie_content,
+    .sixth_movie_content {
+        display: flex; /* Uses flexbox to stack the content */
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        padding: 16px; /* Adds padding to the content */
+    }
+}
